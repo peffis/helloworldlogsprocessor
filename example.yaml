@@ -2,14 +2,6 @@ receivers:
   filelog:
     include: [ tmp.json ]
     operators:
-     # - id : parse_body
-     #    type: json_parser
-     #  - id: trace
-     #    type: trace_parser
-     #    trace_id:
-     #      parse_from: attributes.trace_id
-     #    span_id:
-     #      parse_from: attributes.span_id
       - type: json_parser
         timestamp:
           parse_from: attributes.time
