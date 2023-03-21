@@ -1,0 +1,42 @@
+receivers:
+  filelog:
+    include: [ tmp.json ]
+    operators:
+     # - id : parse_body
+     #    type: json_parser
+     #  - id: trace
+     #    type: trace_parser
+     #    trace_id:
+     #      parse_from: attributes.trace_id
+     #    span_id:
+     #      parse_from: attributes.span_id
+      - type: json_parser
+        timestamp:
+          parse_from: attributes.time
+          layout: '%Y-%m-%d %H:%M:%S'
+      - type: trace_parser
+        trace_id:
+          parse_from: attributes.traceId
+        span_id:
+          parse_from: attributes.spanId
+  otlp:
+    protocols:
+      grpc:
+
+processors:
+  helloworldlogsprocessor:
+
+exporters:
+  logging:
+    verbosity: detailed
+
+service:
+  pipelines:
+    logs:
+      receivers:
+      - otlp
+      - filelog
+      processors:
+      - helloworldlogsprocessor
+      exporters:
+      - logging
