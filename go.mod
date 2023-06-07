@@ -2,7 +2,10 @@ module github.com/peffis/helloworldlogsprocessor
 
 go 1.19
 
+replace github.com/open-telemetry/opentelemetry-collector-contrib/exporter/opensearchexporter => github.com/dbason/opentelemetry-collector-contrib/exporter/opensearchexporter v0.0.0-20230220215934-fc1091406dd0
+
 require (
+	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/opensearchexporter v0.0.0-20230220215934-fc1091406dd0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza v0.73.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/filelogreceiver v0.73.0
 	go.opentelemetry.io/collector v0.73.0
@@ -31,6 +34,7 @@ require (
 	github.com/bmatcuk/doublestar/v4 v4.6.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/elastic/go-structform v0.0.9 // indirect
 	github.com/felixge/httpsnoop v1.0.3 // indirect
 	github.com/go-kit/log v0.2.1 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
@@ -55,6 +59,8 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/mostynb/go-grpc-compression v1.1.17 // indirect
 	github.com/observiq/ctimefmt v1.0.0 // indirect
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/common v0.48.0 // indirect
+	github.com/opensearch-project/opensearch-go v1.1.0 // indirect
 	github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c // indirect
 	github.com/prometheus/client_golang v1.14.0 // indirect
 	github.com/prometheus/client_model v0.3.0 // indirect

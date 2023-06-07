@@ -22,6 +22,7 @@ import (
 
 	"go.opentelemetry.io/collector/component"
 
+	opensearchexporter "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/opensearchexporter"
 	"github.com/peffis/helloworldlogsprocessor"
 )
 
@@ -79,6 +80,7 @@ func components() (otelcol.Factories, error) {
 		loggingexporter.NewFactory(),
 		otlpexporter.NewFactory(),
 		otlphttpexporter.NewFactory(),
+		opensearchexporter.NewFactory(),
 	)
 	if err != nil {
 		return otelcol.Factories{}, err

@@ -21,6 +21,12 @@ processors:
 exporters:
   logging:
     verbosity: detailed
+  opensearch:
+    tls:
+      insecure: true
+    index: 'opentelemetry'
+    endpoints:
+    - "http://localhost:9200"
 
 service:
   pipelines:
@@ -32,3 +38,4 @@ service:
       - helloworldlogsprocessor
       exporters:
       - logging
+      - opensearch
